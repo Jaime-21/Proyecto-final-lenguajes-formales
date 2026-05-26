@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         // Cambiar el Caso aquí para probar
-        runCase8();
+        runCase5();
     }
 
     // CASE 1
@@ -75,8 +75,7 @@ public class Main {
 
     // CASE 5
     public static void runCase5() {
-        // Nota: Asegúrate de completar este String si tu parser
-        // requiere tokens específicos para el archivo del Caso 5.
+
         String program = """
                 """;
 
@@ -185,5 +184,30 @@ public class Main {
 
         StaticAnalyzer analyzer = new StaticAnalyzer(ast, variables, facts);
         analyzer.analyze();
+    }
+
+    // ADDITIONAL TEST CASE (FOR GRADING)
+    public static void runAdditionalCase() {
+        String program = """
+                rule r1:
+                if a then b
+
+                rule r2:
+                if b then c
+
+                rule r3:
+                if c then d
+
+                rule r4:
+                if d then e
+                """;
+
+        Map<String, Integer> variables = new HashMap<>();
+
+        // El estado inicial contiene el hecho activo 'a'
+        Set<String> facts = new HashSet<>();
+        facts.add("a");
+
+        executeProgram(program, variables, facts);
     }
 }
