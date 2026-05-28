@@ -85,4 +85,4 @@ The project does not use Maven or Gradle.
 To test new inputs, modify or add a test case in Main.java.
 
 ```bash
-src/analysis/*.java
+src/analisys/*.java
